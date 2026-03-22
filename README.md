@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kanban Board
 
-## Getting Started
+Une application de gestion de tâches construite avec Next.js 14, TypeScript et Zustand
 
-First, run the development server:
+## Stack technique
 
-```bash
+- **Next.js 14** (App Router)
+- **TypeScript** (mode strict)
+- **Zustand** - gestion d'état avec persistance localStorage
+- **Tailwind CSS v4** - styles utilitaires
+- **Jest + React Testing Library** - tests unitaires
+
+## Lancer le projet
+
+### Prérequis
+- Node.js 18+
+- npm
+
+### Installation
+
+npm install
+
+### Développement
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+L'application est accessible sur http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm test
 
-## Learn More
+### Build de production
 
-To learn more about Next.js, take a look at the following resources:
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Architecture
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Le projet suit une organisation **feature-based** :
 
-## Deploy on Vercel
+src/
+├─ app/                 # Layout et page principale Next.js
+├─ features/
+│  └─ board/             # Feature Kanban
+│     ├─ components/
+│     ├─ store/
+│     ├─ __tests__/
+└─ shared/
+   ├─ components/
+   └─ types/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Choix techniques
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+** Zustand plutôt que Redux** - plus léger, sans boilerplate, suffisant pour la complexité de ce projet. Le middleware `persist` gère la persistance localStorage automatiquement.
+
+**Organisation feature-based** - chaque feature est autonome et isolée. Ajouter une nouvelle feature ne touche pas aux existantes.
+
+**TypeScript strict** - les entités métier (Card, Column, Board) sont entièrement typées. L'usage de types union littéraux (`CardStatus`) garantit l'exhaustivité des cas à la compilation.
+
+## Fonctionnalités
+
+- Créer des tâches dans n'importe quelle colonne
+- Déplacer une tâche vers la colonne suivante
+- Supprimer une tâche
+- Persistance automatique entre les sessions (localStorage)
