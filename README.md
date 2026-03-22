@@ -37,7 +37,7 @@ npm run build
 ## Architecture
 
 Le projet suit une organisation **feature-based** :
-
+```
 src/
 ├─ app/                 # Layout et page principale Next.js
 ├─ features/
@@ -48,6 +48,7 @@ src/
 └─ shared/
    ├─ components/
    └─ types/
+```
 
 ## Choix techniques
 
