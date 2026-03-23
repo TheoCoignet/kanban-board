@@ -18,17 +18,34 @@ Une application de gestion de tâches construite avec Next.js 14, TypeScript et 
 
 ### Installation
 
+1. Cloner le repo
+```
+git clone https://github.com/TheoCoignet/kanban-board
+cd kanban-board
+```
+
+2. Installer les dépendences
+```
 npm install
+```
 
-### Développement
-
+3. Lancer en développement
+```
 npm run dev
+```
 
-L'application est accessible sur http://localhost:3000
-
-### Tests
-
+4. Lancer les tests
+```
 npm test
+```
+
+
+## Aperçu
+
+En local l'application est accessible sur http://localhost:3000
+Sinon ![Preview](./preview.png)
+Ou
+> Demo live : [kanban-board-test.netlify.app](https://kanban-board-test.netlify.app/)
 
 ### Build de production
 
