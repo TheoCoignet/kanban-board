@@ -39,17 +39,15 @@ npm run dev
 npm test
 ```
 
-
-## Aperçu
-
-En local l'application est accessible sur http://localhost:3000
-Sinon ![Preview](./preview.png)
-Ou
-> Demo live : [kanban-board-test.netlify.app](https://kanban-board-test.netlify.app/)
-
 ### Build de production
 
 npm run build
+
+## Aperçu
+
+![Preview](./preview.png)
+
+> Demo live : [kanban-board-test.netlify.app](https://kanban-board-test.netlify.app/)
 
 ## Architecture
 
